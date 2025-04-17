@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Clothing Data</title>
+  <style>
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+    body {
+      background-color: #ffe6f2;
+      color: #99004d;
+      font-family: Arial, sans-serif;
+    }
+    form {
+      margin: 50px auto;
+      padding: 20px;
+      width: 50%;
+      border: 2px solid #ff99cc;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+    label {
+      font-size: 18px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ff99cc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #ff66b3;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #ff3399;
+    }
+  </style>
+</head>
+<body>
+  <!-- logo back at the top! -->
+  <div style="text-align: center; margin-top: 20px;">
+    <img
+      src="logo.png"
+      alt="Final Price Calculator Logo"
+      width="280"
+      style="border-radius: 50%; box-shadow: 0 6px 18px rgba(255,105,180,0.4); animation: popIn 0.8s ease-out;"
+    >
+  </div>
+
+  <h1 style="text-align: center;">Insert Clothing Data</h1>
+  <form method="post" action="save_data.asp">
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+    <label for="clothingItem">Clothing Item:</label>
+    <input type="text" id="clothingItem" name="clothingItem" required>
+
+    <label for="cost">Cost:</label>
+    <input type="number" id="cost" name="cost" step="0.01" required>
+
+    <label for="paymentPlan">Payment Plan (Months):</label>
+    <select id="paymentPlan" name="paymentPlan" required>
+      <option value="6">6 Months</option>
+      <option value="12">12 Months</option>
+    </select>
+
+    <label for="interestRate">Interest Rate (%):</label>
+    <input type="number" id="interestRate" name="interestRate" step="0.01" required>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
